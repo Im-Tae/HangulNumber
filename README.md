@@ -7,15 +7,16 @@
 <p align="center">  
 숫자를 한글로 바꿔주는 라이브러리입니다.</p>
 <p align="center">
-    <a href="https://github.com/Im-Tae/Hangul_Number/blob/master/README.md">KOREAN<a/>
+    <a href="https://github.com/Im-Tae/HangulNumber/blob/master/README/ENGLISH.md">ENGLISH<a/>
 </p>
+
 
 
 
 
 ## 설치
 
-[![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber)
+[![](https://jitci.com/gh/Im-Tae/HangulNumber/svg)](https://jitci.com/gh/Im-Tae/HangulNumber)[![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber) 
 
 ### Gradle
 

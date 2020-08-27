@@ -4,20 +4,18 @@
   <a href="https://github.com/Im-Tae"><img alt="Author" src="https://img.shields.io/badge/author-Im--Tae-red.svg"/></a>
   <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
 </p>
-
 <p align="center">  
 Use this library to convert Number into Korean.</p>
 <p align="center">
-    <a href="https://github.com/Im-Tae/Hangul_Number/blob/master/README.md">KOREAN<a/>
+    <a href="https://github.com/Im-Tae/HangulNumber/blob/master/README.md">KOREAN<a/>
 </p>
+
 
 
 
 ## Download
 
-[![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber)
-
-
+[![](https://jitci.com/gh/Im-Tae/HangulNumber/svg)](https://jitci.com/gh/Im-Tae/HangulNumber)[![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber)
 
 ### Gradle
 
