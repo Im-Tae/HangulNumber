@@ -1,0 +1,3 @@
+include ':HangulNumber'
+include ':app'
+rootProject.name = "HangulNumberApp"
