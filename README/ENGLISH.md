@@ -15,7 +15,7 @@ Use this library to convert Number into Korean.</p>
 
 ## Download
 
-[![](https://jitci.com/gh/Im-Tae/HangulNumber/svg)](https://jitci.com/gh/Im-Tae/HangulNumber)[![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber)
+[![](https://jitci.com/gh/Im-Tae/HangulNumber/svg)](https://jitci.com/gh/Im-Tae/HangulNumber) [![](https://jitpack.io/v/Im-Tae/HangulNumber.svg)](https://jitpack.io/#Im-Tae/HangulNumber)
 
 ### Gradle
 
