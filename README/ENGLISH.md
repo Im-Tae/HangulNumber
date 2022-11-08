@@ -34,7 +34,7 @@ allprojects {
 
 ```gradle
 dependencies {
-    implementation 'com.github.Im-Tae:Hangul_Number:Version'
+    implementation 'com.github.Im-Tae:HangulNumber:Version'
 }
 ```
 
