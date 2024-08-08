@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  build:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Install Android SDK
+        uses: android-actions/setup-android@v2
+
+      - name: Set Gradle Permission
+        run: chmod +x gradlew
+
+      - name: Create local.properties
+        run: |
+          echo "# DEMO" > local.properties
+
+      - name: Gradle Build
+        run: ./gradlew :app:build --stacktrace
+
+      - name: Lint report Upload
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v2
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-debug.html
+          retention-days: 2 # store 2 days
+
+      - name: Send Slack Notification
+        if: always()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          author_name: 'HangulNumber CI'
+          fields: repo, message, author, action, eventName, ref, workflow
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          MATRIX_CONTEXT: ${{ toJson(matrix) }}
