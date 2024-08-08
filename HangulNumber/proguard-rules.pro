@@ -19,3 +19,20 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.leaf.hangulnumber.** { *; }
+
+-keep class com.leaf.hangulnumber.HangulNumber {
+    *;
+}
+
+-keepclassmembers class com.leaf.hangulnumber.HangulNumber$Companion {
+    !public <methods>;
+    public <fields>;
+}
+
+-keepclassmembernames class com.leaf.hangulnumber.HangulNumber$Companion {
+    public *;
+}
+
+-dontwarn java.lang.invoke.StringConcatFactory
