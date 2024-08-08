@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:paddingHorizontal="20dp"
     android:orientation="vertical" >
 
     <TextView
@@ -13,12 +15,23 @@
         android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
+    <TextView
+        android:id="@+id/resultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
     <EditText
         android:id="@+id/inputEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        android:layout_marginTop="12dp"
+        android:autofillHints="생성할 숫자를 입력하세요"
+        android:inputType="number"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        tools:ignore="LabelFor" />
 
     <Button
         android:id="@+id/button"
@@ -27,13 +40,4 @@
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:text="생성" />
-
-    <TextView
-        android:id="@+id/resultTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
 </LinearLayout>

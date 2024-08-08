@@ -2,7 +2,7 @@ import com.leaf.buildsrc.Configuration
 
 android {
     compileSdk = Configuration.compileSdk
-    namespace = "com.imtae.hangulnumber"
+    namespace = "com.leaf.hangulnumber"
 
     defaultConfig {
         minSdk = Configuration.minSdk

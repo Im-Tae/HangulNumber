@@ -8,7 +8,7 @@ plugins {
 
 android {
     compileSdk = Configuration.compileSdk
-    namespace = "com.imtae.hangulnumberapp"
+    namespace = "com.leaf.hangulnumberapp"
 
     defaultConfig {
         minSdk = Configuration.minSdk
@@ -63,6 +63,9 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
 
     implementation(libs.androidx.constraintlayout)
+
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
