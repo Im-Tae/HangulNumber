@@ -1,6 +1,6 @@
-package com.imtae.hangulnumberexample
+package com.leaf.hangulnumberapp
 
-import com.imtae.hangulnumber.HangulNumber
+import com.leaf.hangulnumber.HangulNumber
 import org.junit.Test
 
 class HangulNumberTest {

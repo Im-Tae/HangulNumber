@@ -1,0 +1,46 @@
+name: Publish
+
+on:
+  release:
+    types: [ released ]
+  workflow_dispatch:
+    inputs:
+      version_name:
+        description: 'The version name for the tag'
+        required: true
+        default: ''
+
+jobs:
+  publish:
+    name: 배포
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: 17
+          distribution: temurin
+
+      - name: Set Gradle Permission
+        run: chmod +x gradlew
+
+      - name: Publish MavenCentral
+        run: |
+          ./gradlew publishAllPublicationsToMavenCentral --no-configuration-cache
+        env:
+          ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
+          ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.SIGNING_KEY }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyId: ${{ secrets.SIGNING_KEY_ID }}
+          ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.SIGNING_PASSWORD }}
+
+      - name: Create Tag
+        if: success()  # Start When the publish is successful
+        run: |
+          git tag ${{ github.event.inputs.version_name }}
+          git push origin ${{ github.event.inputs.version_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
